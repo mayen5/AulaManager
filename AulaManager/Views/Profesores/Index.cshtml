@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AulaManager.Models.Profesor>
+
+@{
+    ViewBag.Title = "Profesores";
+}
+
+<h2>Profesores</h2>
+
+<p class="derecha">
+    @Html.ActionLink("Crear Profesor", "Create", new { }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning efecto" })
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

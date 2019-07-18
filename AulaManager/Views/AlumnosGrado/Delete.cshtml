@@ -1,0 +1,50 @@
+﻿@model AulaManager.Models.AlumnoGrado
+
+@{
+    ViewBag.Title = "Eliminar Alumno Grado";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro de eliminar el registro?</h3>
+<div>
+    <h4>Alumno Grado</h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Alumno.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alumno.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grado.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grado.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seccion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            @Html.ActionLink("Regresar", "Index", new { }, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

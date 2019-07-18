@@ -22,3 +22,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.efecto:hover {
+    background-color: blue;
+}
+
+.derecha {
+    text-align: right;
+}
+
+th{
+    background-color: black;
+    color: white;
+}
